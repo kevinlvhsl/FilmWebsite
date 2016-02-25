@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-//new sechema object
+//new sechema object 
 var UserSchema = new mongoose.Schema({
 	name : {
 		unipue: true,
