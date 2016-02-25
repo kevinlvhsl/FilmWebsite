@@ -39,6 +39,6 @@ use imooc //切换到数据库
 + 然后写你需要的代码，add 并 commit
 + 然后 在github上新建一个仓库，将仓库地址拷贝下来如：`https://github.com/kevinlvhsl/FilmWebsite.git`
 + 最后，在本地项目目录下 执行 `git remote add origin -m master https://github.com/kevinlvhsl/FilmWebsite.git`
-
+ 
 > 这是给本地项目添加远程地址的命令 git remote add    -m 表示指定分支
 > 如果是修改地址 git remote set-url origin https://github.com/kevinlvhsl/xx.git
