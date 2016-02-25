@@ -43,7 +43,6 @@ app.get('/movie/:id',function(req, res){
 	})
 })
 
-
 //express route
 app.get('/admin/movie',function(req, res){
 	res.render('admin' ,{title: 'kevin 管理页',
