@@ -2,24 +2,28 @@ var express = require('express');
 var path = require('path')
 var mongoose = require('mongoose')
 var _ = require('underscore')
-var Movie = require('./models/movie')
-var port = 8000 //process.env.PORT || 3000
+var port = 8000 //process.env.PORT || 8000
 var app = express()
 
 //链接数据库   film： 起的数据库名
 mongoose.connect('mongodb://localhost/film')
-app.set('views','./views/pages')//将展示页面路径views设置到views下的pages目录下，  第一个参数固定写views
+app.set('views','./app/views/pages')//将展示页面路径views设置到views下的pages目录下，  第一个参数固定写views
 app.set('view engine', 'jade')
 app.locals.moment = require('moment')//与时间有关的中间件
 app.use(express.static(path.join(__dirname,'public')))//将静态资源目录定位到bower_components目录下
 //app.use(express.bodyParser())//表单数据格式化
 app.use(require('body-parser').urlencoded({extended: true}))
 app.listen(port)
+require('./config/router')(app)
+console.log('kevin\'s app started on port' + port, 'env::', app.get('env'))
 
-console.log('kevin\'s app started on port' + port)
-
-
-
+if ('development' === app.get('env')) {
+	app.set('showStackError')
+	app.locals.pretty = true
+	// app.use(logger(':method :url :status'))
+	mongoose.set('debug', true)
+}
+/*
 //express route
 app.get('/',function(req, res){
 	Movie.fetch(function(err, movies){
@@ -149,4 +153,4 @@ app.delete('/admin/list', function(req, res){
 
 		})
 	}
-})
+})*/
