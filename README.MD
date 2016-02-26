@@ -1,7 +1,6 @@
 KEVIN'S FILM SITE
 
-grunt + node + bower
-
+grunt + node + bower + jade
 
 
 
