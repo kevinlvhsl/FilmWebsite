@@ -2,7 +2,9 @@ KEVIN'S FILM SITE
 
 grunt + node + bower + jade
 
-
+Express 4.x changes:
+1. cookiePaser, session 独立开来
+2. connect 也是单独的
 
 ### mongodb 启动方式
 ```
