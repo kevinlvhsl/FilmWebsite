@@ -18,8 +18,6 @@ app.listen(port)
 
 console.log('kevin\'s app started on port' + port)
 
-
-
 //express route
 app.get('/',function(req, res){
 	Movie.fetch(function(err, movies){
